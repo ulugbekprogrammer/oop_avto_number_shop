@@ -1,3 +1,0 @@
-Shirt, 10.0
-Pants, 20.0
-Shoes, 30.0

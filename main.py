@@ -1140,177 +1140,81 @@
 # print(portfolio[0])
 
 
-# class Library:
-#     def __init__(self):
-#         self.books = []
+class Library:
+    def __init__(self):
+        self.books = []
 
-#     def info_books(self):
-#         return [f"{book.title} by {book.author} relased in {book.released_year}" for book in self.books]
-#         # for book in self.books:
-#             # print(f"{book.title} by {book.author} relased in {book.released_year}")
+    def info_books(self):
+        # return [f"{book.title} by {book.author} relased in {book.released_year}" for book in self.books]
+        for book in self.books:
+            print(f"{book.title} by {book.author} relased in {book.released_year}")
 
-#     def add_book(self, book):
-#         self.books.append(book)
+    def add_book(self, book):
+        self.books.append(book)
 
-#     def remove_book(self, book):
-#         self.books.remove(book)
+    def remove_book(self, book):
+        self.books.remove(book)
 
-#     def update_book(self, book, new_book_title, new_book_author, new_book_released_year):
-#         if book in self.books:
-#             self.books.remove(book)
-#             new_book = Book(new_book_title, new_book_author, new_book_released_year)
-#             self.books.append(new_book)
-#         else: 
-#             print("Book not found")
+    def update_book(self, book, new_book_title, new_book_author, new_book_released_year):
+        if book in self.books:
+            self.books.remove(book)
+            new_book = Book(new_book_title, new_book_author, new_book_released_year)
+            self.books.append(new_book)
+        else: 
+            print("Book not found")
 
-#     def search_title(self, title):
-#         for book in self.books:
-#             if book.title == title:
-#                 print("Book info: ")
-#                 print(f"{book.title} by {book.author} relased in {book.released_year}")
-#             else:
-#                 print(f"Book with this {book.title} title not found")
+    def search_title(self, title):
+        for book in self.books:
+            if book.title == title:
+                print("Book info: ")
+                print(f"{book.title} by {book.author} relased in {book.released_year}")
+            else:
+                print(f"Book with this {book.title} title not found")
 
-#     def search_author(self, author):
-#         for book in self.books:
-#             if book.author == author:
-#                 print("Book info: ")
-#                 print(f"{book.title} by {book.author} relased in {book.released_year}")
-#             else: 
-#                 print(f"Book with this {book.author} author not found")
+    def search_author(self, author):
+        for book in self.books:
+            if book.author == author:
+                print("Book info: ")
+                print(f"{book.title} by {book.author} relased in {book.released_year}")
+            else: 
+                print(f"Book with this {book.author} author not found")
 
-#     def search_year(self, released_year):
-#         for book in self.books:
-#             if book.released_year == released_year:
-#                 print("Book info: ")
-#                 print(f"{book.title} by {book.author} relased in {book.released_year}")
-#             else: 
-#                 print(f"Book with this {book.released_year} year not found")
+    def search_year(self, released_year):
+        for book in self.books:
+            if book.released_year == released_year:
+                print("Book info: ")
+                print(f"{book.title} by {book.author} relased in {book.released_year}")
+            else: 
+                print(f"Book with this {book.released_year} year not found")
 
-# class Book:
-#     def __init__(self, title, author, released_year):
-#         self.title = title
-#         self.author = author
-#         self.released_year = released_year
+class Book:
+    def __init__(self, title, author, released_year):
+        self.title = title
+        self.author = author
+        self.released_year = released_year
 
 
-# library = Library()
-# book1 = Book("The Great Gatsby", "F Scott Fitzgerald", 1925)
-# book2 = Book("To Kill a Mockingbird", "Harper Lee", 1960)
-# book3 = Book("1984", "George Orwell", 1949)
+library = Library()
+book1 = Book("The Great Gatsby", "F Scott Fitzgerald", 1925)
+book2 = Book("To Kill a Mockingbird", "Harper Lee", 1960)
+book3 = Book("1984", "George Orwell", 1949)
 
-# library.add_book(book1)
-# library.add_book(book2)
-# library.add_book(book3)
+library.add_book(book1)
+library.add_book(book2)
+library.add_book(book3)
 
-# # for book in library.info_books():
-# #     print(book)
-
+# for book in library.info_books():
+#     print(book)
+# library.info_books()
 # library.remove_book(book1)
 
-# # for book in library.info_books():
-# #     print(book)
+# for book in library.info_books():
+#     print(book)
 
 # library.update_book(book2, "Naruto", "Kishimota", 1998)
 
 # for book in library.info_books():
-#     print(book)
-# # library.info_books() 
+    # print(book)
 
 # library.search_title('Naruto')
-
-
-
-
-# class User:
-#     def __init__(self, username, email):    
-#         self.username = username
-#         self.email = email
-
-# class Customer(User):
-#     def __init__(self, username, email):
-#         super().__init__(username, email)
-#         self.cart = []
-
-#     def add_to_cart(self, product):
-#         self.cart.append(product)
-    
-#     def remove_to_cart(self, product):
-#         if product in self.cart:
-#             self.cart.remove(product)
-#         else:
-#             print("Item is not on your cart")
-
-#     def view_cart(self):
-#         print("Items in your cart: ")
-#         for product in self.cart:
-#             print(product.name)
-
-#     def save_cart(self, filename):
-#         with open(filename, "w") as file:
-#             for product in self.cart:
-#                 file.write(f"{product.name}, {product.price}\n")
-#         print(f"Cart saved to {filename}")
-
-# class Seller(User):
-#     def __init__(self, username, email):
-#         super().__init__(username, email)
-#         self.products = []
-
-#     def add_product(self, product):
-#         self.products.append(product)
-
-#     def remove_product(self, product):
-#         if product in self.products:
-#             self.products.remove(product)
-#         else:
-#             print("Product not found!")
-
-#     def view_products(self):
-#         print("Available products: ")
-#         for product in self.products:
-#             print(product.name)
-
-#     def save_products(self, filename):
-#         with open(filename, "w") as file:
-#             for product in self.products:
-#                 file.write(f"{product.name}, {product.price}\n")
-#         print(f"Products saved to {filename}")
-
-# class Product:
-#     def __init__(self, name, price):
-#         self.name = name
-#         self.price = price
-    
-#     def get_info(self):
-#         print(f"Name: {self.name}")
-#         print(f"PRice: {self.price}")
-
-# customer = Customer("BillyBob123", "billy@hoolo.com")
-# seller = Seller("JohnDoe", "john@doe.com")
-
-# product1 = Product("Shirt", 10.00)
-# product2 = Product("Pants", 20.00)
-# product3 = Product("Shoes", 30.00)
-
-# customer.add_to_cart(product1)
-# customer.add_to_cart(product2)
-# customer.add_to_cart(product3)
-
-# customer.view_cart()
-
-# customer.save_cart("customer_cart.txt")
-
-# customer.remove_to_cart(product2)
-# customer.view_cart()
-
-# seller.add_product(product1)
-# seller.add_product(product2)
-# seller.add_product(product3)
-
-# seller.view_products()
-
-# seller.save_products("seller_products.txt")
-
-
 
